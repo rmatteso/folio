@@ -5,11 +5,69 @@
 */
 
 html    {
-    // font-family: 'Vollkorn', serif;
-    // font-family: 'Unica One', cursive;
+    font-family: 'Vollkorn', serif;
 }
 
 body    {
-    //
+    width: 1100px;
+    margin: auto;
 }
 
+h1, h2, h3, h4, h5  {
+    font-family: 'Unica One', cursive;
+    text-transform: uppercase;
+}
+
+header  {
+    height: 7em;
+    
+    margin: 1em 0;
+    border-bottom: 3px solid #ccc;
+    
+    text-align: right;
+    
+    #logo   {
+        float: left;
+    }
+    
+    h1  {
+        font-size: 3em;
+        color: firebrick;
+    }
+    
+    h4  {
+        font-size: 1.2em;
+        line-height: 0em;
+        margin: -1em 0 0 0;
+    }
+}
+
+section {
+    //
+    
+    &.hero   {
+        //
+    }
+    
+    &.featured   {
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        h2  {
+            flex: 0 0 100%;
+        }
+        
+        .item   {
+            width: calc(30% - 1em);
+            
+            background: #f2f2f2;
+            padding: 1em;
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
