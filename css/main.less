@@ -9,6 +9,7 @@ html    {
 }
 
 body    {
+    min-width: 360px;
     width: 1100px;
     margin: auto;
 }
@@ -28,6 +29,8 @@ header  {
     
     #logo   {
         float: left;
+        width: 100px;
+        height: 100px;
     }
     
     h1  {
@@ -43,10 +46,10 @@ header  {
 }
 
 section {
-    //
-    
     &.hero   {
-        //
+        img {
+            width: 100%;
+        }
     }
     
     &.featured   {
@@ -57,6 +60,7 @@ section {
         
         h2  {
             flex: 0 0 100%;
+            padding: 0 0 0 0.5em;
         }
         
         .item   {
@@ -68,6 +72,68 @@ section {
             img {
                 width: 100%;
             }
+        }
+    }
+}
+
+footer  {
+    margin: 1em 0 0 0;
+    padding: 1em 0.5em;
+    border-top: 3px solid #ccc;
+}
+
+/* 
+    Note to self:
+    CSS specificity is really weird with media queries.
+*/
+
+@media screen and (max-width: 1100px)    {
+    body    {
+        width: 100%;
+    }
+    
+    header, section, footer {
+        padding: 0 1em;
+    }
+    
+    section {
+        &.featured   {
+            .item   {
+                width: calc(30% - 2em);
+                margin: 0.5em 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px)    {
+    section {
+        &.featured   {
+            .item   {
+                width: 100%;
+                margin: 0.5em 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px)    {
+    header  {
+        height: 6.2em;
+        margin: 0 0 1em 0;
+        padding: 1em 1em;
+        background: #333;
+        color: #fff;
+        
+        border-bottom: none;
+        
+        h1  {
+            font-size: 1.8em;
+        }
+        h4  {
+            font-size: 1em;
+            line-height: 1em;
+            margin: -1.3em 0 0 0;
         }
     }
 }

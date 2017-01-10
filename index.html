@@ -14,46 +14,67 @@
         
         <!-- plugins -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <!-- not currently using jQuery, so withheld for now until implementation of larger-sized images for subitems
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
     </head>
     <body>
         <header>
             <div id="logo">
-                <img src="http://placehold.it/100x100">
+                <picture>
+                    <source media="(max-width: 500px)" type="image/svg+xml" srcset="img/logo_reverse.svg"> <!-- reverse -->
+                    <source media="(min-width: 501px)" type="image/svg+xml" srcset="img/logo_positive.svg">
+                    <img src="img/logo_positive.svg" alt="RM Logo">
+                </picture>
+                
             </div>
             <h1>Robert Matteson</h1>
-            <h4>Pixel Relocation Engineer</h2>
+            <h4>Maker &amp; Craftsman</h4>
         </header>
         
         <section class="hero">
+            <h2>Australian Desert Rosewood Skinning Knife</h2>
             <picture>
-                <source>
-                <img src="http://placehold.it/1100x450">
+                <source media="(max-width: 500px)" srcset="img/skinner_500.jpg">
+                <source media="(min-width: 501px)" srcset="img/skinner_1x.jpg 1x, img/skinner_2x.jpg 2x">
+                <img src="http://placehold.it/1100x450" alt="Australian Desert Rosewood Skinning Knife">
             </picture>
         </section>
         
         <section class="featured">
             <h2>Featured Work</h2>
             <div class="item">
-                <img src="http://placehold.it/350x250">
-                <h3>Item 1</h3>
-                <a src="javascript:void(0)" class="more">Somewhere</a>
+                <picture>
+                    <source srcset="img/driver_1x.jpg 1x, img/driver_2x.jpg 2x">
+                    <img src="img/driver_1x.jpg" alt="vintage notched screwdriver">
+                </picture>
+                <h3>Vintage Notched Screwdriver</h3>
+                <p>This vintage screwdriver was partially rusted and its wood inlays covered in paint.  I used several steps of sandpaper and oils to restore it to its original appearance.</p>
+                <!--
+                    note: add link/js behavior to view larger image size, repeat for all subitems
+                    <a href="javascript:void(0)" class="more">Somewhere</a>
+                -->
             </div>
             <div class="item">
-                <img src="http://placehold.it/350x250">
-                <h3>Item 2</h3>
-                <a src="javascript:void(0)" class="more">Somewhere</a>
+                <picture>
+                    <source srcset="img/paring_1x.jpg 1x, img/paring_2x.jpg 2x">
+                    <img src="img/paring_1x.jpg" alt="paring knife with olivewood handle">
+                </picture>
+                <h3>Olivewood Paring Knife</h3>
+                <p>This is a simple kitchen paring knife with an olivewood handle made as a gift for a family member's birthday.</p>
             </div>
             <div class="item">
-                <img src="http://placehold.it/350x250">
-                <h3>Item 3</h3>
-                <a src="javascript:void(0)" class="more">Somewhere</a>
+                <picture>
+                    <source srcset="img/hunter_1x.jpg 1x, img/hunter_2x.jpg 2x">
+                    <img src="img/hunter_1x.jpg" alt="hunting knife with stacked leather, wood and bone handle">
+                </picture>
+                <h3>Vintage Hunting Knife</h3>
+                <p>This hunting knife belonged to my great grandfather.  It originally had a stacked leather handle that had deteriorated over the years.  I replaced it with leather, amboyna burl wood and bone as my first knifemaking project.</p>
             </div>
         </section>
         
         <footer>
-            <p>&copy; 2017 robert</p>
-            <p>made begrudingly in north carolina</p>
+            <p>&copy; 2017 robert matteson</p>
+            <p>made while stuck inside because of a snowstorm in north carolina</p>
         </footer>
     </body>
 </html>
