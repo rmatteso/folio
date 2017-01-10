@@ -1,0 +1,112 @@
+/*  
+    main.less
+    created 1/6/2017
+    robert matteson
+*/
+/*  
+    Okay, so it's not CSS, so the w3 validator throws errors, but the compiled CSS, as per     http://lesstester.com/ passes without error.  Again, if necessary, I'll pull LESS from 
+    the project and replaced with compiled CSS.
+*/
+html {
+  font-family: 'Vollkorn', serif;
+}
+body {
+  min-width: 360px;
+  width: 1100px;
+  margin: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Unica One', cursive;
+  text-transform: uppercase;
+}
+header {
+  height: 7em;
+  margin: 1em 0;
+  border-bottom: 3px solid #ccc;
+  text-align: right;
+}
+header #logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+header h1 {
+  font-size: 3em;
+  color: firebrick;
+}
+header h4 {
+  font-size: 1.2em;
+  line-height: 0em;
+  margin: -1em 0 0 0;
+}
+section.hero img {
+  width: 100%;
+}
+section.featured {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.featured h2 {
+  flex: 0 0 100%;
+  padding: 0 0 0 0.5em;
+}
+section.featured .item {
+  width: calc(29%);
+  background: #f2f2f2;
+  padding: 1em;
+}
+section.featured .item img {
+  width: 100%;
+}
+footer {
+  margin: 1em 0 0 0;
+  padding: 1em 0.5em;
+  border-top: 3px solid #ccc;
+}
+/* 
+    Note to self:
+    CSS specificity is really weird with media queries.
+*/
+@media screen and (max-width: 1100px) {
+  body {
+    width: 100%;
+  }
+  header,
+  section,
+  footer {
+    padding: 0 1em;
+  }
+  section.featured .item {
+    width: calc(28%);
+    margin: 0.5em 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  section.featured .item {
+    width: 100%;
+    margin: 0.5em 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    height: 6.2em;
+    margin: 0 0 1em 0;
+    padding: 1em 1em;
+    background: #333;
+    color: #fff;
+    border-bottom: none;
+  }
+  header h1 {
+    font-size: 1.8em;
+  }
+  header h4 {
+    font-size: 1em;
+    line-height: 1em;
+    margin: -1.3em 0 0 0;
+  }
+}
